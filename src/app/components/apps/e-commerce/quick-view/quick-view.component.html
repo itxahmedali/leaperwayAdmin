@@ -1,0 +1,55 @@
+<ng-template #quickView let-modal>
+    <div class="modal-content">
+      <div class="modal-header product-modal">
+        <div class="product-box row">
+          <div class="product-img col-md-6"><img class="img-fluid" src="assets/images/ecommerce/01.jpg" alt=""></div>
+          <div class="product-details col-md-6 text-left">
+            <h4>Woman T-shirt</h4>
+            <div class="product-price">$26.00
+              <del>$350.00    </del>
+            </div>
+            <div class="product-view">
+              <h6 class="f-w-600">Product Details</h6>
+              <p class="mb-0">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo.</p>
+            </div>
+            <div class="product-size">
+              <ul>
+                <li> 
+                  <button class="btn btn-outline-light" type="button">M</button>
+                </li>
+                <li> 
+                  <button class="btn btn-outline-light" type="button">L</button>
+                </li>
+                <li> 
+                  <button class="btn btn-outline-light" type="button">Xl</button>
+                </li>
+              </ul>
+            </div>
+            <div class="product-qnty">
+              <h6 class="f-w-600">Quantity</h6>
+              <div class="qty-box">
+                <div class="input-group">
+                  <span class="input-group-prepend">
+                    <button class="btn quantity-left-minus" type="button" data-type="minus" data-field="">
+                      <app-feather-icons [icon]="'minus'"></app-feather-icons>
+                    </button>
+                  </span>
+                  <input class="form-control input-number" type="text" name="quantity" value="1">
+                  <span class="input-group-prepend">
+                    <button class="btn quantity-right-plus" type="button" data-type="plus" data-field="">
+                      <app-feather-icons [icon]="'plus'"></app-feather-icons>
+                    </button>
+                  </span>
+                </div>
+              </div>
+              <div class="addcart-btn">
+                <button class="btn btn-primary mr-1" type="button">Add to Cart</button>
+                <button class="btn btn-primary" type="button">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="close" (click)="modal.dismiss('Cross click')"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+</ng-template>

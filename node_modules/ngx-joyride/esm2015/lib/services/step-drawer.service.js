@@ -1,0 +1,41 @@
+import { Injectable, ComponentFactoryResolver, ApplicationRef, Injector } from '@angular/core';
+import { JoyrideStepComponent } from '../components';
+export class StepDrawerService {
+    constructor(componentFactoryResolver, appRef, injector) {
+        this.componentFactoryResolver = componentFactoryResolver;
+        this.appRef = appRef;
+        this.injector = injector;
+        this.refMap = {};
+    }
+    draw(step) {
+        // 1. Create a component reference from the component
+        const ref = this.componentFactoryResolver
+            .resolveComponentFactory(JoyrideStepComponent)
+            .create(this.injector);
+        // 2. Attach component to the appRef so that it's inside the ng component tree
+        this.appRef.attachView(ref.hostView);
+        // 3. Get DOM element from component
+        const domElem = ref.hostView
+            .rootNodes[0];
+        // 4. Append DOM element to the body
+        document.body.appendChild(domElem);
+        const instance = ref.instance;
+        instance.step = step;
+        ref.changeDetectorRef.detectChanges();
+        step.stepInstance = instance;
+        this.refMap[step.name] = ref;
+    }
+    remove(step) {
+        this.appRef.detachView(this.refMap[step.name].hostView);
+        this.refMap[step.name].destroy();
+    }
+}
+StepDrawerService.decorators = [
+    { type: Injectable }
+];
+StepDrawerService.ctorParameters = () => [
+    { type: ComponentFactoryResolver },
+    { type: ApplicationRef },
+    { type: Injector }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RlcC1kcmF3ZXIuc2VydmljZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1qb3lyaWRlL3NyYy9saWIvc2VydmljZXMvc3RlcC1kcmF3ZXIuc2VydmljZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQ0gsVUFBVSxFQUVWLHdCQUF3QixFQUN4QixjQUFjLEVBQ2QsUUFBUSxFQUVYLE1BQU0sZUFBZSxDQUFDO0FBQ3ZCLE9BQU8sRUFBRSxvQkFBb0IsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUlyRCxNQUFNLE9BQU8saUJBQWlCO0lBRzFCLFlBQ3FCLHdCQUFrRCxFQUMzRCxNQUFzQixFQUN0QixRQUFrQjtRQUZULDZCQUF3QixHQUF4Qix3QkFBd0IsQ0FBMEI7UUFDM0QsV0FBTSxHQUFOLE1BQU0sQ0FBZ0I7UUFDdEIsYUFBUSxHQUFSLFFBQVEsQ0FBVTtRQUx0QixXQUFNLEdBQTBELEVBQUUsQ0FBQztJQU14RSxDQUFDO0lBRUosSUFBSSxDQUFDLElBQWlCO1FBQ2xCLHFEQUFxRDtRQUNyRCxNQUFNLEdBQUcsR0FBdUMsSUFBSSxDQUFDLHdCQUF3QjthQUN4RSx1QkFBdUIsQ0FBQyxvQkFBb0IsQ0FBQzthQUM3QyxNQUFNLENBQUMsSUFBSSxDQUFDLFFBQVEsQ0FBQyxDQUFDO1FBRTNCLDhFQUE4RTtRQUM5RSxJQUFJLENBQUMsTUFBTSxDQUFDLFVBQVUsQ0FBQyxHQUFHLENBQUMsUUFBUSxDQUFDLENBQUM7UUFFckMsb0NBQW9DO1FBQ3BDLE1BQU0sT0FBTyxHQUFJLEdBQUcsQ0FBQyxRQUFpQzthQUNqRCxTQUFTLENBQUMsQ0FBQyxDQUFnQixDQUFDO1FBRWpDLG9DQUFvQztRQUNwQyxRQUFRLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxPQUFPLENBQUMsQ0FBQztRQUVuQyxNQUFNLFFBQVEsR0FBeUIsR0FBRyxDQUFDLFFBQVEsQ0FBQztRQUNwRCxRQUFRLENBQUMsSUFBSSxHQUFHLElBQUksQ0FBQztRQUNyQixHQUFHLENBQUMsaUJBQWlCLENBQUMsYUFBYSxFQUFFLENBQUM7UUFDdEMsSUFBSSxDQUFDLFlBQVksR0FBRyxRQUFRLENBQUM7UUFFN0IsSUFBSSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLEdBQUcsR0FBRyxDQUFDO0lBQ2pDLENBQUM7SUFFRCxNQUFNLENBQUMsSUFBaUI7UUFDcEIsSUFBSSxDQUFDLE1BQU0sQ0FBQyxVQUFVLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUMsUUFBUSxDQUFDLENBQUM7UUFDeEQsSUFBSSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUMsT0FBTyxFQUFFLENBQUM7SUFDckMsQ0FBQzs7O1lBckNKLFVBQVU7OztZQVJQLHdCQUF3QjtZQUN4QixjQUFjO1lBQ2QsUUFBUSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XHJcbiAgICBJbmplY3RhYmxlLFxyXG4gICAgQ29tcG9uZW50UmVmLFxyXG4gICAgQ29tcG9uZW50RmFjdG9yeVJlc29sdmVyLFxyXG4gICAgQXBwbGljYXRpb25SZWYsXHJcbiAgICBJbmplY3RvcixcclxuICAgIEVtYmVkZGVkVmlld1JlZlxyXG59IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5pbXBvcnQgeyBKb3lyaWRlU3RlcENvbXBvbmVudCB9IGZyb20gJy4uL2NvbXBvbmVudHMnO1xyXG5pbXBvcnQgeyBKb3lyaWRlU3RlcCB9IGZyb20gJy4uL21vZGVscyc7XHJcblxyXG5ASW5qZWN0YWJsZSgpXHJcbmV4cG9ydCBjbGFzcyBTdGVwRHJhd2VyU2VydmljZSB7XHJcbiAgICBwcml2YXRlIHJlZk1hcDogeyBba2V5OiBzdHJpbmddOiBDb21wb25lbnRSZWY8Sm95cmlkZVN0ZXBDb21wb25lbnQ+IH0gPSB7fTtcclxuXHJcbiAgICBjb25zdHJ1Y3RvcihcclxuICAgICAgICBwcml2YXRlIHJlYWRvbmx5IGNvbXBvbmVudEZhY3RvcnlSZXNvbHZlcjogQ29tcG9uZW50RmFjdG9yeVJlc29sdmVyLFxyXG4gICAgICAgIHByaXZhdGUgYXBwUmVmOiBBcHBsaWNhdGlvblJlZixcclxuICAgICAgICBwcml2YXRlIGluamVjdG9yOiBJbmplY3RvclxyXG4gICAgKSB7fVxyXG5cclxuICAgIGRyYXcoc3RlcDogSm95cmlkZVN0ZXApIHtcclxuICAgICAgICAvLyAxLiBDcmVhdGUgYSBjb21wb25lbnQgcmVmZXJlbmNlIGZyb20gdGhlIGNvbXBvbmVudFxyXG4gICAgICAgIGNvbnN0IHJlZjogQ29tcG9uZW50UmVmPEpveXJpZGVTdGVwQ29tcG9uZW50PiA9IHRoaXMuY29tcG9uZW50RmFjdG9yeVJlc29sdmVyXHJcbiAgICAgICAgICAgIC5yZXNvbHZlQ29tcG9uZW50RmFjdG9yeShKb3lyaWRlU3RlcENvbXBvbmVudClcclxuICAgICAgICAgICAgLmNyZWF0ZSh0aGlzLmluamVjdG9yKTtcclxuXHJcbiAgICAgICAgLy8gMi4gQXR0YWNoIGNvbXBvbmVudCB0byB0aGUgYXBwUmVmIHNvIHRoYXQgaXQncyBpbnNpZGUgdGhlIG5nIGNvbXBvbmVudCB0cmVlXHJcbiAgICAgICAgdGhpcy5hcHBSZWYuYXR0YWNoVmlldyhyZWYuaG9zdFZpZXcpO1xyXG5cclxuICAgICAgICAvLyAzLiBHZXQgRE9NIGVsZW1lbnQgZnJvbSBjb21wb25lbnRcclxuICAgICAgICBjb25zdCBkb21FbGVtID0gKHJlZi5ob3N0VmlldyBhcyBFbWJlZGRlZFZpZXdSZWY8YW55PilcclxuICAgICAgICAgICAgLnJvb3ROb2Rlc1swXSBhcyBIVE1MRWxlbWVudDtcclxuXHJcbiAgICAgICAgLy8gNC4gQXBwZW5kIERPTSBlbGVtZW50IHRvIHRoZSBib2R5XHJcbiAgICAgICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChkb21FbGVtKTtcclxuXHJcbiAgICAgICAgY29uc3QgaW5zdGFuY2U6IEpveXJpZGVTdGVwQ29tcG9uZW50ID0gcmVmLmluc3RhbmNlO1xyXG4gICAgICAgIGluc3RhbmNlLnN0ZXAgPSBzdGVwO1xyXG4gICAgICAgIHJlZi5jaGFuZ2VEZXRlY3RvclJlZi5kZXRlY3RDaGFuZ2VzKCk7XHJcbiAgICAgICAgc3RlcC5zdGVwSW5zdGFuY2UgPSBpbnN0YW5jZTtcclxuXHJcbiAgICAgICAgdGhpcy5yZWZNYXBbc3RlcC5uYW1lXSA9IHJlZjtcclxuICAgIH1cclxuXHJcbiAgICByZW1vdmUoc3RlcDogSm95cmlkZVN0ZXApIHtcclxuICAgICAgICB0aGlzLmFwcFJlZi5kZXRhY2hWaWV3KHRoaXMucmVmTWFwW3N0ZXAubmFtZV0uaG9zdFZpZXcpO1xyXG4gICAgICAgIHRoaXMucmVmTWFwW3N0ZXAubmFtZV0uZGVzdHJveSgpO1xyXG4gICAgfVxyXG59XHJcbiJdfQ==

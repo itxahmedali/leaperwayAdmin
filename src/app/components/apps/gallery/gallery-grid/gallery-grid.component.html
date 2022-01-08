@@ -1,0 +1,21 @@
+<app-breadcrumb [title]="'Gallery Grid'" [items]="['Apps', 'Gallery']" [active_item]="'Gallery Grid'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>IMAGE GALLERY</h5>
+        </div>
+        <div class="gallery my-gallery card-body row" itemscope="">
+        <figure class="col-xl-3 col-md-4 col-6" itemprop="associatedMedia" itemscope="" *ngFor="let img of imagesRect">
+          <a href="javascript:void(0)" itemprop="contentUrl" data-size="1600x950">
+            <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" class="img-thumbnail" /></a>
+        </figure>
+      </div>
+      <ks-modal-gallery [id]="1" [modalImages]="imagesRect" [plainGalleryConfig]="customPlainGalleryRowDescConfig"
+        [currentImageConfig]="{downloadable: true}" [buttonsConfig]="buttonsConfigCustom"
+        (buttonBeforeHook)="onButtonBeforeHook($event)" (buttonAfterHook)="onButtonAfterHook($event)">
+      </ks-modal-gallery>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<app-breadcrumb [title]="'Dropzone'" [items]="['Bonus UI', 'Advance']" [active_item]="'Dropzone'"></app-breadcrumb>
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row dropzone-custom">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Single File Upload</h5>
+        </div>
+        <div class="card-body">
+          <div class="dropzone dropzone-primary" [dropzone]="config1" (init)="onUploadInit($event)"
+            (error)="onUploadError($event)" (success)="onUploadSuccess($event)">
+            <div class="dz-message needsclick">
+              <i class="icon-cloud-up"></i>
+              <h6>Drop files here or click to upload.</h6><span>(This is just a demo dropzone. Selected files are
+                <strong>not</strong> actually uploaded.)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Multi File Upload</h5>
+        </div>
+        <div class="card-body">
+          <div class="dropzone dropzone-primary" [dropzone]="config2" (init)="onUploadInit($event)"
+            (error)="onUploadError($event)" (success)="onUploadSuccess($event)">
+            <div class="dz-message needsclick">
+              <i class="icon-cloud-up"></i>
+              <h6>Drop files here or click to upload.</h6><span>(This is just a demo dropzone. Selected files are
+                <strong>not</strong> actually uploaded.)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>File Type Validation</h5>
+        </div>
+        <div class="card-body">
+          <div class="dropzone dropzone-primary" [dropzone]="config3" (init)="onUploadInit($event)"
+            (error)="onUploadError($event)" (success)="onUploadSuccess($event)">
+            <div class="dz-message needsclick">
+              <i class="icon-cloud-up"></i>
+              <h6>Drop only .pdf files here or click to upload.</h6><span>(This is just a demo dropzone. Selected files
+                are
+                <strong>not</strong> actually uploaded.)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->

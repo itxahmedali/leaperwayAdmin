@@ -1,0 +1,431 @@
+<app-breadcrumb [title]="'Chart'" [items]="['Widgets']" [active_item]="'Chart'"></app-breadcrumb>
+<div class="container-fluid">
+    <!-- Chart widget top Start-->
+    <div class="row">
+        <div class="col-xl-4 col-md-12 box-col-12">
+            <div class="card o-hidden">
+                <div class="chart-widget-top">
+                    <div class="row card-body">
+                        <div class="col-5">
+                            <h6 class="f-w-600 font-primary">SALE</h6><span class="num"><span
+                                    class="counter">90</span>%<i class="icon-angle-up f-12 ml-1"></i></span>
+                        </div>
+                        <div class="col-7 text-right">
+                            <h4 class="num total-value">$ <span class="counter">3654</span>.00</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <div id="chart-widget1">
+                            <apx-chart [chart]="sale.chart" [dataLabels]="sale.dataLabels" [stroke]="sale.stroke"
+                                [xaxis]="sale.xaxis" [yaxis]="sale.yaxis" [grid]="sale.grid" [fill]="sale.fill"
+                                [colors]="sale.colors" [series]="sale.series" [tooltip]="sale.tooltip">
+                            </apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-12 box-col-12">
+            <div class="card o-hidden">
+                <div class="chart-widget-top">
+                    <div class="row card-body">
+                        <div class="col-7">
+                            <h6 class="f-w-600 font-secondary">PROJECTS</h6><span class="num">
+                                <span class="counter">30</span>%<i class="icon-angle-up f-12 ml-1"></i></span>
+                        </div>
+                        <div class="col-5 text-right">
+                            <h4 class="num total-value counter">12569</h4>
+                        </div>
+                    </div>
+                    <div id="chart-widget2">
+                        <div class="flot-chart-placeholder" id="chart-widget-top-second">
+                            <apx-chart [chart]="projects.chart" [dataLabels]="projects.dataLabels"
+                                [stroke]="projects.stroke" [xaxis]="projects.xaxis" [yaxis]="projects.yaxis"
+                                [grid]="projects.grid" [fill]="projects.fill" [colors]="projects.colors"
+                                [series]="projects.series" [tooltip]="projects.tooltip">
+                            </apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-md-12 box-col-12">
+            <div class="card o-hidden">
+                <div class="chart-widget-top">
+                    <div class="row card-body">
+                        <div class="col-8">
+                            <h6 class="f-w-600 font-success">PRODUCTS</h6><span class="num"><span
+                                    class="counter">68</span>%<i class="icon-angle-up f-12 ml-1"></i></span>
+                        </div>
+                        <div class="col-4 text-right">
+                            <h4 class="num total-value"><span class="counter">93</span>M</h4>
+                        </div>
+                    </div>
+                    <div id="chart-widget3">
+                        <div class="flot-chart-placeholder" id="chart-widget-top-third">
+                            <apx-chart [chart]="products.chart" [dataLabels]="products.dataLabels"
+                                [stroke]="products.stroke" [xaxis]="products.xaxis" [yaxis]="products.yaxis"
+                                [grid]="products.grid" [fill]="products.fill" [colors]="products.colors"
+                                [series]="products.series" [tooltip]="products.tooltip">
+                            </apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Chart widget top Ends-->
+    <!-- Chart widget with bar chart Start-->
+    <div class="row">
+        <div class="col-xl-7 col-md-12 box-col-12">
+            <div class="card o-hidden">
+                <div class="card-header">
+                    <h5>Marketin Expenses</h5>
+                </div>
+                <div class="bar-chart-widget">
+                    <div class="bottom-content card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div id="chart-widget4">
+                                    <apx-chart [legend]="marketingExpenses.legend" [chart]="marketingExpenses.chart"
+                                        [plotOptions]="marketingExpenses.plotOptions"
+                                        [dataLabels]="marketingExpenses.dataLabels" [stroke]="marketingExpenses.stroke"
+                                        [grid]="marketingExpenses.grid" [series]="marketingExpenses.series"
+                                        [xaxis]="marketingExpenses.xaxis" [yaxis]="marketingExpenses.yaxis"
+                                        [fill]="marketingExpenses.fill" [tooltip]="marketingExpenses.tooltip"
+                                        [colors]="marketingExpenses.colors">
+                                    </apx-chart>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 p-b-10">
+                                <h6>Total sales</h6>
+                                <div class="progress-showcase row">
+                                    <div class="col">
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar-animated bg-primary progress-bar-striped"
+                                                role="progressbar" style="width: 80%" aria-valuenow="10"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-t-10">
+                                <h6>Total purchase</h6>
+                                <div class="progress-showcase row">
+                                    <div class="col">
+                                        <div class="progress" style="height: 5px;">
+                                            <div class="progress-bar-animated progress-bar-striped bg-secondary"
+                                                role="progressbar" style="width: 90%" aria-valuenow="10"
+                                                aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-5 col-md-12 box-col-12">
+            <div class="card o-hidden">
+                <div class="card-header">
+                    <h5>Total Earning</h5>
+                </div>
+                <div class="bar-chart-widget">
+                    <div class="top-content bg-primary"></div>
+                    <div class="bottom-content card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div id="chart-widget5">
+                                    <apx-chart [series]="TotalEarning.pieseries" [chart]="TotalEarning.chart"
+                                        [plotOptions]="TotalEarning.plotOptions" [labels]="TotalEarning.labels"
+                                        [fill]="TotalEarning.fill" [stroke]="TotalEarning.stroke">
+                                    </apx-chart>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row text-center f-w-600">
+                            <div class="col-4 b-r-light">
+                                <div><span class="num font-primary">12%<i
+                                            class="icon-angle-up f-12 ml-1"></i></span><span
+                                        class="text-muted mt-2 mb-2 block-bottom">Year</span>
+                                    <h4 class="num m-0"><span class="counter color-bottom">3659</span>M</h4>
+                                </div>
+                            </div>
+                            <div class="col-4 b-r-light">
+                                <div><span class="num font-primary">15%<i
+                                            class="icon-angle-up f-12 ml-1"></i></span><span
+                                        class="text-muted mt-2 mb-2 block-bottom">Month</span>
+                                    <h4 class="num m-0"><span class="counter color-bottom">698</span>M</h4>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div><span class="num font-primary">34%<i
+                                            class="icon-angle-up f-12 ml-1"></i></span><span
+                                        class="text-muted mt-2 mb-2 block-bottom">Today</span>
+                                    <h4 class="num m-0"><span class="counter color-bottom">9361</span>M</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-12 box-col-6 xl-50 center-icon">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-9">
+                            <h5>Skill Status</h5>
+                        </div>
+                        <div class="col-3 text-right"><i class="text-muted" data-feather="trending-up"></i></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <div id="circlechart">
+                            <apx-chart [chart]="skillStatus.chart" [plotOptions]="skillStatus.plotOptions"
+                                [series]="skillStatus.series" [labels]="skillStatus.labels"
+                                [legend]="skillStatus.legend" [colors]="skillStatus.colors">
+                            </apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8 col-lg-12 box-col-6 xl-50 center-icon">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-9">
+                            <h5>Order Status</h5>
+                        </div>
+                        <div class="col-3 text-right"><i class="text-muted" data-feather="shopping-bag"></i></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <div id="progress1">
+                            <apx-chart [chart]="progress1.chart" [plotOptions]="progress1.plotOptions"
+                                [colors]="progress1.colors" [stroke]="progress1.stroke" [fill]="progress1.fill"
+                                [series]="progress1.series" [title]="progress1.title" [subtitle]="progress1.subtitle"
+                                [tooltip]="progress1.tooltip" [xaxis]="progress1.xaxis" [yaxis]="progress1.yaxis">
+                            </apx-chart>
+                        </div>
+                        <div id="progress2">
+                            <apx-chart [chart]="progress2.chart" [plotOptions]="progress2.plotOptions"
+                                [colors]="progress2.colors" [stroke]="progress2.stroke" [fill]="progress2.fill"
+                                [series]="progress2.series" [title]="progress2.title" [subtitle]="progress2.subtitle"
+                                [tooltip]="progress2.tooltip" [xaxis]="progress2.xaxis" [yaxis]="progress2.yaxis">
+                            </apx-chart>
+                        </div>
+                        <div id="progress3">
+                            <apx-chart [chart]="progress3.chart" [plotOptions]="progress3.plotOptions"
+                                [colors]="progress3.colors" [stroke]="progress3.stroke" [fill]="progress3.fill"
+                                [series]="progress3.series" [title]="progress3.title" [subtitle]="progress3.subtitle"
+                                [tooltip]="progress3.tooltip" [xaxis]="progress3.xaxis" [yaxis]="progress3.yaxis">
+                            </apx-chart>
+                        </div>
+                        <div id="progress4">
+                            <apx-chart [chart]="progress4.chart" [plotOptions]="progress4.plotOptions"
+                                [colors]="progress4.colors" [stroke]="progress4.stroke" [fill]="progress4.fill"
+                                [series]="progress4.series" [title]="progress4.title" [subtitle]="progress4.subtitle"
+                                [tooltip]="progress4.tooltip" [xaxis]="progress4.xaxis" [yaxis]="progress4.yaxis">
+                            </apx-chart>
+                        </div>
+                        <div id="progress5">
+                            <apx-chart [chart]="progress5.chart" [plotOptions]="progress5.plotOptions"
+                                [colors]="progress5.colors" [stroke]="progress5.stroke" [fill]="progress5.fill"
+                                [series]="progress5.series" [title]="progress5.title" [subtitle]="progress5.subtitle"
+                                [tooltip]="progress5.tooltip" [xaxis]="progress5.xaxis" [yaxis]="progress5.yaxis">
+                            </apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Live Product chart widget Start-->
+        <div class="col-xl-7 box-col-6 xl-50">
+            <div class="small-chart-widget chart-widgets-small">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Live Products</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="chart-widget6">
+                                        <apx-chart [chart]="liveProducts.chart" [stroke]="liveProducts.stroke"
+                                            [series]="liveProducts.series" [fill]="liveProducts.fill"
+                                            [colors]="liveProducts.colors" [labels]="liveProducts.labels"
+                                            [markers]="liveProducts.markers" [yaxis]="liveProducts.yaxis"
+                                            [tooltip]="liveProducts.tooltip">
+                                        </apx-chart>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Live Product chart widget Ends-->
+        <!-- Turnover chart widget Start-->
+        <div class="col-xl-5 box-col-6 xl-50">
+            <div class="small-chart-widget chart-widgets-small">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Turnover</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="chart-widget7">
+                                        <apx-chart [chart]="turnOver.chart" [dataLabels]="turnOver.dataLabels"
+                                            [stroke]="turnOver.stroke" [fill]="turnOver.fill" [series]="turnOver.series"
+                                            [title]="turnOver.title" [colors]="turnOver.colors"
+                                            [labels]="turnOver.labels" [xaxis]="turnOver.xaxis" [yaxis]="turnOver.yaxis"
+                                            [legend]="turnOver.legend">
+                                        </apx-chart>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Turnover chart widget Ends-->
+        <!-- Monthly Sale chart widget Start-->
+        <div class="col-xl-5 box-col-6 xl-50">
+            <div class="small-chart-widget chart-widgets-small">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Monthly Sales</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="chart-widget8">
+                                        <apx-chart [fill]="monthlySales.fill" [colors]="monthlySales.colors"
+                                            [chart]="monthlySales.chart" [series]="monthlySales.series"
+                                            [title]="monthlySales.title" [stroke]="monthlySales.stroke"
+                                            [markers]="monthlySales.markers" [labels]="monthlySales.labels">
+                                        </apx-chart>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Monthly Sale chart widget Ends-->
+        <!-- Uses chart widget Start-->
+        <div class="col-xl-7 col-lg-12 box-col-6 xl-50">
+            <div class="small-chart-widget chart-widgets-small">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Uses</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="chart-widget9">
+                                        <apx-chart [chart]="uses.chart" [dataLabels]="uses.dataLabels"
+                                            [series]="uses.series" [fill]="uses.fill" [colors]="uses.colors"
+                                            [title]="uses.title" [xaxis]="uses.xaxis" [yaxis]="uses.yaxis">
+                                        </apx-chart>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Uses chart widget Ends-->
+    </div>
+    <!-- Chart widget with bar chart Ends-->
+    <!-- Browser uses and website visiter widget Start-->
+    <div class="row">
+        <!-- browser uses widget chart Start-->
+        <div class="col-sm-12 box-col-12">
+            <div class="donut-chart-widget">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Browser Uses</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="chart-widget13">
+                            <apx-chart [chart]="browserUse.chart" [plotOptions]="browserUse.plotOptions"
+                                [fill]="browserUse.fill" [series]="browserUse.series" [title]="browserUse.title"
+                                [xaxis]="browserUse.xaxis" [yaxis]="browserUse.yaxis">
+                            </apx-chart>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- browser uses widget chart Ends-->
+    </div>
+    <!-- status widget Start-->
+    <div class="row">
+        <div class="col-xl-5 col-lg-12 box-col-12 center-icon">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-9">
+                            <h5>Finance</h5>
+                        </div>
+                        <div class="col-3 text-right"><i class="text-muted" data-feather="navigation"></i></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <div id="columnchart">
+                            <apx-chart [chart]="finance.chart" [dataLabels]="finance.dataLabels"
+                                [stroke]="finance.stroke" [series]="finance.series" [title]="finance.title"
+                                [subtitle]="finance.subtitle" [xaxis]="finance.xaxis" [legend]="finance.legend"
+                                [colors]="finance.colors">
+                            </apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-7 col-lg-12 box-col-12 center-icon">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-9">
+                            <h5>Order Status</h5>
+                        </div>
+                        <div class="col-3 text-right"><i class="text-muted" data-feather="shopping-bag"></i></div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <div id="linechart">
+                            <apx-chart [chart]="orderStatus.chart" [dataLabels]="orderStatus.dataLabels"
+                                [stroke]="orderStatus.stroke" [grid]="orderStatus.grid" [fill]="orderStatus.fill"
+                                [colors]="orderStatus.colors" [markers]="orderStatus.markers"
+                                [series]="orderStatus.series" [xaxis]="orderStatus.xaxis" [title]="orderStatus.title"
+                                [subtitle]="orderStatus.subtitle" [legend]="orderStatus.legend">
+                            </apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- status widget Ends-->
+</div>

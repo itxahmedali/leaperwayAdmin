@@ -1,0 +1,70 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
+// A copy of @ckeditor/ckeditor5-utils/src/uid.js
+// A hash table of hex numbers to avoid using toString() in uid() which is costly.
+// [ '00', '01', '02', ..., 'fe', 'ff' ]
+const ɵ0 = /**
+ * @param {?} val
+ * @param {?} index
+ * @return {?}
+ */
+(val, index) => ('0' + (index).toString(16)).slice(-2);
+/** @type {?} */
+const HEX_NUMBERS = new Array(256).fill(0)
+    .map((ɵ0));
+/**
+ * Returns a unique id. The id starts with an "e" character and a randomly generated string of
+ * 32 alphanumeric characters.
+ *
+ * **Note**: The characters the unique id is built from correspond to the hex number notation
+ * (from "0" to "9", from "a" to "f"). In other words, each id corresponds to an "e" followed
+ * by 16 8-bit numbers next to each other.
+ *
+ * @return {?} An unique id string.
+ */
+export default function uid() {
+    // Let's create some positive random 32bit integers first.
+    //
+    // 1. Math.random() is a float between 0 and 1.
+    // 2. 0x100000000 is 2^32 = 4294967296.
+    // 3. >>> 0 enforces integer (in JS all numbers are floating point).
+    //
+    // For instance:
+    //		Math.random() * 0x100000000 = 3366450031.853859
+    // but
+    //		Math.random() * 0x100000000 >>> 0 = 3366450031.
+    /** @type {?} */
+    const r1 = Math.random() * 0x100000000 >>> 0;
+    /** @type {?} */
+    const r2 = Math.random() * 0x100000000 >>> 0;
+    /** @type {?} */
+    const r3 = Math.random() * 0x100000000 >>> 0;
+    /** @type {?} */
+    const r4 = Math.random() * 0x100000000 >>> 0;
+    // Make sure that id does not start with number.
+    return 'e' +
+        HEX_NUMBERS[r1 >> 0 & 0xFF] +
+        HEX_NUMBERS[r1 >> 8 & 0xFF] +
+        HEX_NUMBERS[r1 >> 16 & 0xFF] +
+        HEX_NUMBERS[r1 >> 24 & 0xFF] +
+        HEX_NUMBERS[r2 >> 0 & 0xFF] +
+        HEX_NUMBERS[r2 >> 8 & 0xFF] +
+        HEX_NUMBERS[r2 >> 16 & 0xFF] +
+        HEX_NUMBERS[r2 >> 24 & 0xFF] +
+        HEX_NUMBERS[r3 >> 0 & 0xFF] +
+        HEX_NUMBERS[r3 >> 8 & 0xFF] +
+        HEX_NUMBERS[r3 >> 16 & 0xFF] +
+        HEX_NUMBERS[r3 >> 24 & 0xFF] +
+        HEX_NUMBERS[r4 >> 0 & 0xFF] +
+        HEX_NUMBERS[r4 >> 8 & 0xFF] +
+        HEX_NUMBERS[r4 >> 16 & 0xFF] +
+        HEX_NUMBERS[r4 >> 24 & 0xFF];
+}
+export { ɵ0 };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidWlkLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQGNrZWRpdG9yL2NrZWRpdG9yNS1hbmd1bGFyLyIsInNvdXJjZXMiOlsidWlkLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7QUFVTyxDQUFFLEdBQUcsRUFBRSxLQUFLLEVBQUcsRUFBRSxDQUFDLENBQUUsR0FBRyxHQUFHLENBQUUsS0FBSyxDQUFFLENBQUMsUUFBUSxDQUFFLEVBQUUsQ0FBRSxDQUFFLENBQUMsS0FBSyxDQUFFLENBQUMsQ0FBQyxDQUFFOztNQURqRSxXQUFXLEdBQUcsSUFBSSxLQUFLLENBQUUsR0FBRyxDQUFFLENBQUMsSUFBSSxDQUFFLENBQUMsQ0FBRTtLQUM1QyxHQUFHLE1BQW9FOzs7Ozs7Ozs7OztBQVl6RSxNQUFNLENBQUMsT0FBTyxVQUFVLEdBQUc7Ozs7Ozs7Ozs7OztVQVdwQixFQUFFLEdBQUcsSUFBSSxDQUFDLE1BQU0sRUFBRSxHQUFHLFdBQVcsS0FBSyxDQUFDOztVQUN0QyxFQUFFLEdBQUcsSUFBSSxDQUFDLE1BQU0sRUFBRSxHQUFHLFdBQVcsS0FBSyxDQUFDOztVQUN0QyxFQUFFLEdBQUcsSUFBSSxDQUFDLE1BQU0sRUFBRSxHQUFHLFdBQVcsS0FBSyxDQUFDOztVQUN0QyxFQUFFLEdBQUcsSUFBSSxDQUFDLE1BQU0sRUFBRSxHQUFHLFdBQVcsS0FBSyxDQUFDO0lBRTVDLGdEQUFnRDtJQUNoRCxPQUFPLEdBQUc7UUFDVCxXQUFXLENBQUUsRUFBRSxJQUFJLENBQUMsR0FBRyxJQUFJLENBQUU7UUFDN0IsV0FBVyxDQUFFLEVBQUUsSUFBSSxDQUFDLEdBQUcsSUFBSSxDQUFFO1FBQzdCLFdBQVcsQ0FBRSxFQUFFLElBQUksRUFBRSxHQUFHLElBQUksQ0FBRTtRQUM5QixXQUFXLENBQUUsRUFBRSxJQUFJLEVBQUUsR0FBRyxJQUFJLENBQUU7UUFDOUIsV0FBVyxDQUFFLEVBQUUsSUFBSSxDQUFDLEdBQUcsSUFBSSxDQUFFO1FBQzdCLFdBQVcsQ0FBRSxFQUFFLElBQUksQ0FBQyxHQUFHLElBQUksQ0FBRTtRQUM3QixXQUFXLENBQUUsRUFBRSxJQUFJLEVBQUUsR0FBRyxJQUFJLENBQUU7UUFDOUIsV0FBVyxDQUFFLEVBQUUsSUFBSSxFQUFFLEdBQUcsSUFBSSxDQUFFO1FBQzlCLFdBQVcsQ0FBRSxFQUFFLElBQUksQ0FBQyxHQUFHLElBQUksQ0FBRTtRQUM3QixXQUFXLENBQUUsRUFBRSxJQUFJLENBQUMsR0FBRyxJQUFJLENBQUU7UUFDN0IsV0FBVyxDQUFFLEVBQUUsSUFBSSxFQUFFLEdBQUcsSUFBSSxDQUFFO1FBQzlCLFdBQVcsQ0FBRSxFQUFFLElBQUksRUFBRSxHQUFHLElBQUksQ0FBRTtRQUM5QixXQUFXLENBQUUsRUFBRSxJQUFJLENBQUMsR0FBRyxJQUFJLENBQUU7UUFDN0IsV0FBVyxDQUFFLEVBQUUsSUFBSSxDQUFDLEdBQUcsSUFBSSxDQUFFO1FBQzdCLFdBQVcsQ0FBRSxFQUFFLElBQUksRUFBRSxHQUFHLElBQUksQ0FBRTtRQUM5QixXQUFXLENBQUUsRUFBRSxJQUFJLEVBQUUsR0FBRyxJQUFJLENBQUUsQ0FBQztBQUNqQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBAbGljZW5zZSBDb3B5cmlnaHQgKGMpIDIwMDMtMjAyMCwgQ0tTb3VyY2UgLSBGcmVkZXJpY28gS25hYmJlbi4gQWxsIHJpZ2h0cyByZXNlcnZlZC5cbiAqIEZvciBsaWNlbnNpbmcsIHNlZSBMSUNFTlNFLm1kIG9yIGh0dHBzOi8vY2tlZGl0b3IuY29tL2xlZ2FsL2NrZWRpdG9yLW9zcy1saWNlbnNlXG4gKi9cblxuLy8gQSBjb3B5IG9mIEBja2VkaXRvci9ja2VkaXRvcjUtdXRpbHMvc3JjL3VpZC5qc1xuXG4vLyBBIGhhc2ggdGFibGUgb2YgaGV4IG51bWJlcnMgdG8gYXZvaWQgdXNpbmcgdG9TdHJpbmcoKSBpbiB1aWQoKSB3aGljaCBpcyBjb3N0bHkuXG4vLyBbICcwMCcsICcwMScsICcwMicsIC4uLiwgJ2ZlJywgJ2ZmJyBdXG5jb25zdCBIRVhfTlVNQkVSUyA9IG5ldyBBcnJheSggMjU2ICkuZmlsbCggMCApXG5cdC5tYXAoICggdmFsLCBpbmRleCApID0+ICggJzAnICsgKCBpbmRleCApLnRvU3RyaW5nKCAxNiApICkuc2xpY2UoIC0yICkgKTtcblxuLyoqXG4gKiBSZXR1cm5zIGEgdW5pcXVlIGlkLiBUaGUgaWQgc3RhcnRzIHdpdGggYW4gXCJlXCIgY2hhcmFjdGVyIGFuZCBhIHJhbmRvbWx5IGdlbmVyYXRlZCBzdHJpbmcgb2ZcbiAqIDMyIGFscGhhbnVtZXJpYyBjaGFyYWN0ZXJzLlxuICpcbiAqICoqTm90ZSoqOiBUaGUgY2hhcmFjdGVycyB0aGUgdW5pcXVlIGlkIGlzIGJ1aWx0IGZyb20gY29ycmVzcG9uZCB0byB0aGUgaGV4IG51bWJlciBub3RhdGlvblxuICogKGZyb20gXCIwXCIgdG8gXCI5XCIsIGZyb20gXCJhXCIgdG8gXCJmXCIpLiBJbiBvdGhlciB3b3JkcywgZWFjaCBpZCBjb3JyZXNwb25kcyB0byBhbiBcImVcIiBmb2xsb3dlZFxuICogYnkgMTYgOC1iaXQgbnVtYmVycyBuZXh0IHRvIGVhY2ggb3RoZXIuXG4gKlxuICogQHJldHVybnMgQW4gdW5pcXVlIGlkIHN0cmluZy5cbiAqL1xuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gdWlkKCkge1xuXHQvLyBMZXQncyBjcmVhdGUgc29tZSBwb3NpdGl2ZSByYW5kb20gMzJiaXQgaW50ZWdlcnMgZmlyc3QuXG5cdC8vXG5cdC8vIDEuIE1hdGgucmFuZG9tKCkgaXMgYSBmbG9hdCBiZXR3ZWVuIDAgYW5kIDEuXG5cdC8vIDIuIDB4MTAwMDAwMDAwIGlzIDJeMzIgPSA0Mjk0OTY3Mjk2LlxuXHQvLyAzLiA+Pj4gMCBlbmZvcmNlcyBpbnRlZ2VyIChpbiBKUyBhbGwgbnVtYmVycyBhcmUgZmxvYXRpbmcgcG9pbnQpLlxuXHQvL1xuXHQvLyBGb3IgaW5zdGFuY2U6XG5cdC8vXHRcdE1hdGgucmFuZG9tKCkgKiAweDEwMDAwMDAwMCA9IDMzNjY0NTAwMzEuODUzODU5XG5cdC8vIGJ1dFxuXHQvL1x0XHRNYXRoLnJhbmRvbSgpICogMHgxMDAwMDAwMDAgPj4+IDAgPSAzMzY2NDUwMDMxLlxuXHRjb25zdCByMSA9IE1hdGgucmFuZG9tKCkgKiAweDEwMDAwMDAwMCA+Pj4gMDtcblx0Y29uc3QgcjIgPSBNYXRoLnJhbmRvbSgpICogMHgxMDAwMDAwMDAgPj4+IDA7XG5cdGNvbnN0IHIzID0gTWF0aC5yYW5kb20oKSAqIDB4MTAwMDAwMDAwID4+PiAwO1xuXHRjb25zdCByNCA9IE1hdGgucmFuZG9tKCkgKiAweDEwMDAwMDAwMCA+Pj4gMDtcblxuXHQvLyBNYWtlIHN1cmUgdGhhdCBpZCBkb2VzIG5vdCBzdGFydCB3aXRoIG51bWJlci5cblx0cmV0dXJuICdlJyArXG5cdFx0SEVYX05VTUJFUlNbIHIxID4+IDAgJiAweEZGIF0gK1xuXHRcdEhFWF9OVU1CRVJTWyByMSA+PiA4ICYgMHhGRiBdICtcblx0XHRIRVhfTlVNQkVSU1sgcjEgPj4gMTYgJiAweEZGIF0gK1xuXHRcdEhFWF9OVU1CRVJTWyByMSA+PiAyNCAmIDB4RkYgXSArXG5cdFx0SEVYX05VTUJFUlNbIHIyID4+IDAgJiAweEZGIF0gK1xuXHRcdEhFWF9OVU1CRVJTWyByMiA+PiA4ICYgMHhGRiBdICtcblx0XHRIRVhfTlVNQkVSU1sgcjIgPj4gMTYgJiAweEZGIF0gK1xuXHRcdEhFWF9OVU1CRVJTWyByMiA+PiAyNCAmIDB4RkYgXSArXG5cdFx0SEVYX05VTUJFUlNbIHIzID4+IDAgJiAweEZGIF0gK1xuXHRcdEhFWF9OVU1CRVJTWyByMyA+PiA4ICYgMHhGRiBdICtcblx0XHRIRVhfTlVNQkVSU1sgcjMgPj4gMTYgJiAweEZGIF0gK1xuXHRcdEhFWF9OVU1CRVJTWyByMyA+PiAyNCAmIDB4RkYgXSArXG5cdFx0SEVYX05VTUJFUlNbIHI0ID4+IDAgJiAweEZGIF0gK1xuXHRcdEhFWF9OVU1CRVJTWyByNCA+PiA4ICYgMHhGRiBdICtcblx0XHRIRVhfTlVNQkVSU1sgcjQgPj4gMTYgJiAweEZGIF0gK1xuXHRcdEhFWF9OVU1CRVJTWyByNCA+PiAyNCAmIDB4RkYgXTtcbn1cbiJdfQ==

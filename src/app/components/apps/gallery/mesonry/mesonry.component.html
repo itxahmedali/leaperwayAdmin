@@ -1,0 +1,16 @@
+<app-breadcrumb [title]="'Masonry Gallery'" [items]="['Apps', 'Gallery']" [active_item]="'Masonry Gallery'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>MASONRY GALLERY</h5>
+        </div>
+        <div class="card-body photoswipe-pb-responsive" itemprop="associatedMedia" itemscope="">
+          <ngx-masonry-gallery class="custom-mesonry" #masonryGallery [width]="250" [images]="images">
+          </ngx-masonry-gallery>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

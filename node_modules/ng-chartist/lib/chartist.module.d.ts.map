@@ -1,0 +1,1 @@
+{"version":3,"file":"chartist.module.d.ts","sources":["chartist.module.d.ts"],"names":[],"mappings":";;AAAA;;;;AACA","sourcesContent":["export declare class ChartistModule {\n}\n"]}

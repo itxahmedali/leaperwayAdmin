@@ -1,0 +1,28 @@
+<app-breadcrumb [title]="'Gallery Description'" [items]="['Apps', 'Gallery']" [active_item]="'Gallery Description'"></app-breadcrumb>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>IMAGE GALLERY WITH DESCRIPTION</h5>
+        </div>
+        <div class="my-gallery card-body row gallery-with-description" itemscope="">
+          <figure class="col-xl-3 col-sm-6" itemprop="associatedMedia" *ngFor="let img of imagesRect">
+            <a href="javascript:void(0)" itemprop="contentUrl">
+              <img [src]="img.modal.img" itemprop="thumbnail" alt="Image description"
+                (click)="openImageModalRowDescription(img)" class="img-thumbnail">
+              <div class="caption">
+                <h4>Portfolio Title</h4>
+                <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy.</p>
+              </div>
+            </a>
+          </figure>
+        </div>
+        <ks-modal-gallery [id]="1" [modalImages]="imagesRect" [plainGalleryConfig]="customPlainGalleryRowDescConfig"
+          [currentImageConfig]="{downloadable: true}" [buttonsConfig]="buttonsConfigCustom">
+        </ks-modal-gallery>
+      </div>
+    </div>
+  </div>
+</div>

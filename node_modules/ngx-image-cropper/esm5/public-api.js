@@ -1,0 +1,11 @@
+/**
+ * @fileoverview added by tsickle
+ * Generated from: public-api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+export { ImageCropperComponent } from './lib/component/image-cropper.component';
+export { ImageCropperModule } from './lib/image-cropper.module';
+export {} from './lib/interfaces';
+export { base64ToFile } from './lib/utils/blob.utils';
+export { resizeCanvas } from './lib/utils/resize.utils';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL25neC1pbWFnZS1jcm9wcGVyLyIsInNvdXJjZXMiOlsicHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFBLHNDQUFjLHlDQUF5QyxDQUFDO0FBQ3hELG1DQUFjLDRCQUE0QixDQUFDO0FBQzNDLGVBQWMsa0JBQWtCLENBQUM7QUFDakMsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLHdCQUF3QixDQUFDO0FBQ3RELE9BQU8sRUFBRSxZQUFZLEVBQUUsTUFBTSwwQkFBMEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCAqIGZyb20gJy4vbGliL2NvbXBvbmVudC9pbWFnZS1jcm9wcGVyLmNvbXBvbmVudCc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi9pbWFnZS1jcm9wcGVyLm1vZHVsZSc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi9pbnRlcmZhY2VzJztcbmV4cG9ydCB7IGJhc2U2NFRvRmlsZSB9IGZyb20gJy4vbGliL3V0aWxzL2Jsb2IudXRpbHMnO1xuZXhwb3J0IHsgcmVzaXplQ2FudmFzIH0gZnJvbSAnLi9saWIvdXRpbHMvcmVzaXplLnV0aWxzJztcbiJdfQ==
