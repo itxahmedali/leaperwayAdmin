@@ -4,7 +4,7 @@
 
 body {
 	.dark-only {
-		color: $dark-all-font-color;
+		color: $dark-all-font-color !important;
 		background-color: $dark-body-background;
 
 		.btn-light, .form-control-plaintext {

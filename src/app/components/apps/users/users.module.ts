@@ -8,16 +8,18 @@ import { SharedModule } from '../../../shared/shared.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { TeamDetailsComponent } from './team-details/team-details.component';
-import { ProfileComponent } from './profile/profile.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
-
+import { NgxPaginationModule } from "ngx-pagination";
 import 'hammerjs';
 import 'mousetrap';
-import { UserProfileComponent } from './profile/user-profile/user-profile.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
-  declarations: [TeamDetailsComponent, ProfileComponent, EditProfileComponent, UserProfileComponent],
+  declarations: [
+    TeamDetailsComponent,
+    UserProfileComponent,
+  ],
   imports: [
+    NgxPaginationModule,
     CommonModule,
     UsersRoutingModule,
     FormsModule,
@@ -26,7 +28,6 @@ import { UserProfileComponent } from './profile/user-profile/user-profile.compon
     CountToModule,
     NgxDatatableModule,
     GalleryModule.forRoot(),
-
-  ]
+  ],
 })
-export class UsersModule { }
+export class UsersModule {}

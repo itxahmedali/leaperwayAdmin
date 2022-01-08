@@ -86,7 +86,6 @@ export class NavService implements OnDestroy {
       title: "Dashboard",
       icon: "home",
       type: "link",
-      active: true,
     },
     {
       path: "/allRestaurants",

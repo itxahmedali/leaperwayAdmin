@@ -87,6 +87,10 @@ export class TeamDetailsComponent implements OnInit {
       status: "Activate",
     },
   ];
+  //google map
+  public lat_m2: number = 52.5159;
+  public lng_m2: number = 13.3777;
+  public zoom_m2: number = 14;
   constructor(private modalService: NgbModal) {}
   // filter functionality
   updateFilter(event) {

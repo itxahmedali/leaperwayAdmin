@@ -7,12 +7,6 @@ import { LoginImageTwoComponent } from './login/image-two/image-two.component';
 import { ValidationComponent } from './login/validation/validation.component';
 import { ToolTipComponent } from './login/tool-tip/tool-tip.component';
 import { SweetalertComponent } from './login/sweetalert/sweetalert.component';
-import { RegisterSimpleComponent } from './register/simple/simple.component';
-import { RegisterImageOneComponent } from './register/image-one/image-one.component';
-import { RegisterImageTwoComponent } from './register/image-two/image-two.component';
-import { UnlockUserComponent } from './unlock-user/unlock-user.component';
-import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   {
@@ -43,35 +37,6 @@ const routes: Routes = [
         component: SweetalertComponent
       }
     ]
-  },
-  {
-    path: 'register',
-    children: [
-      {
-        path: 'simple',
-        component: RegisterSimpleComponent
-      },
-      {
-        path: 'image-one',
-        component: RegisterImageOneComponent
-      },
-      {
-        path: 'image-two',
-        component: RegisterImageTwoComponent
-      }
-    ]
-  },
-  {
-    path: 'unlock-user',
-    component: UnlockUserComponent,
-  },
-  {
-    path: 'forgot-password',
-    component: ForgetPasswordComponent,
-  },
-  {
-    path: 'reset-password',
-    component: ResetPasswordComponent,
   }
 ];
 

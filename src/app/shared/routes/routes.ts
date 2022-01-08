@@ -12,18 +12,18 @@ export const content: Routes = [
   },
   {
     path: 'termsandcondition',
-    loadChildren: () => import('../../components/apps/chat/chat.module').then(m => m.ChatModule)
+    loadChildren: () => import('../../components/apps/termsandcondition/chat.module').then(m => m.ChatModule)
   },
   {
     path: 'privacy',
-    loadChildren: () => import('../../components/apps/email/email.module').then(m => m.EmailModule)
+    loadChildren: () => import('../../components/apps/privacypolicy/email.module').then(m=>m.EmailModule)
   },
   {
     path: 'allRestaurants',
-    loadChildren: () => import('../../components/apps/file-manager/file-manager.module').then(m => m.FileManagerModule)
+    loadChildren: () => import('../../components/apps/restaurants/file-manager.module').then(m=>m.FileManagerModule)
   },
   {
     path: 'settings',
-    loadChildren: () => import('../../components/apps/bookmarks/bookmarks.module').then(m => m.BookmarksModule)
+    loadChildren: () => import('../../components/apps/settings/bookmarks.module').then(m => m.BookmarksModule)
   }
 ];
